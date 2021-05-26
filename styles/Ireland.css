@@ -3,15 +3,33 @@ body {
     background-color: rgb(187, 255, 0);
 }
 /* header elements */
+@keyframes blink { 
+    50% { border-color: rgb(57,255,20);}
+}
 .logo img {
+    animation-name: blink;
+    animation-duration: .5s;
+    animation-timing-function: step-end;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     max-height: 150px;
     max-width: 150px;
+    border: 6px dotted rgb(255,173,0);
+    box-shadow: 5px 5px 10px 1px rgb(255, 0, 179);
 }
+/* Nav Bar Elements */
+
 nav {
+    animation-name: blink;
+    animation-duration: .5s;
+    animation-timing-function: step-end;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     display: flex;
     justify-content: space-evenly;
     background-color: black;
     color: white;
+    border: 6px dotted  rgb(255,173,0);
 }
 nav a:link, a:visited {
     color: white;
@@ -36,34 +54,101 @@ nav a:hover {
     padding: 0.5em;
     text-align: center;
 }
+
+/* Title */
 .title {
     text-align: center;
+    animation:blinkingText 1.2s infinite;    
+}
+
+@keyframes blinkingText{
+    0%{     color:rgb(255, 0, 179);}
+    49%{    color:rgb(255, 0, 179); }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: rgb(255, 0, 179);}
 }
 .main-image {
+    animation-name: blink;
+    animation-duration: .5s;
+    animation-timing-function: step-end;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     max-width: 100%;
     height: auto;
-
+    border: 6px dotted rgb(255,173,0);
+    box-shadow: 20px 20px 10px 1px rgb(255, 0, 179);
 }
+/* Boxes */
+
 .content {
     display: flex;
     justify-content: space-between;
 }
+
 .content__cell {
+    animation-name: blink ;
+    animation-duration: .5s ;
+    animation-timing-function: step-end ;
+    animation-iteration-count: infinite ;
+    animation-direction: alternate ;
     flex-basis: 30%;
     background-color: black;
     color: rgb(255, 0, 179);
     margin: 1em;
     padding: 1em;
     text-align: center;
+    border: 6px dotted rgb(255,173,0);
+    box-shadow: 5px 5px 10px 1px rgb(255, 0, 179);
 }
-.cell-image {
+/* .cell-image {
     max-width: 140px;
     height: auto;
+} */
 
-}
+
+/* Footer  */
+
 footer {
+    animation-name: blink ;
+    animation-duration: .5s ;
+    animation-timing-function: step-end ;
+    animation-iteration-count: infinite ;
+    animation-direction: alternate ;
     background-color: rgb(255, 0, 179);
     color: white;
     margin: 0.5em 0;
     padding: 0.5em;
+    border: 6px dotted rgb(255,173,0);
+   
+}
+
+.copyright {
+ height: 50px;	
+ overflow: hidden;
+ position: relative;
+ background-color: rgb(255, 0, 179);
+ color: rgb(57,255,20);
+
+}
+.copyright p {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+ /* Starting position */
+ transform:translateX(100%);
+ /* Apply animation to this element */
+ animation: scroll-left 10s linear infinite;
+}
+/* Move it (define the animation) */
+@keyframes scroll-left {
+ 0%   {
+ transform: translateX(100%); 		
+ }
+ 100% {
+ transform: translateX(-100%); 
+ }
 }
