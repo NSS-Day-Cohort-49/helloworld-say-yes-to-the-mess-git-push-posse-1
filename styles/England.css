@@ -3,6 +3,11 @@ body {
     background-color: rgb(58, 250, 132);
     color: rgb(189, 236, 174);
 }
+@media (min-width: 60em) and (max-width: 120em) {
+    body {
+      background-color: #efd0d0;
+    }
+  }
 /* header elements */
 .logo img {
     max-height: 150px;
