@@ -1,6 +1,7 @@
 body {
     font-family: "Indie Flower";
-    background-color: rgb(208, 255, 0);
+    font-size:xx-large;
+    background-color: rgb(0, 255, 234);
 }
 /* header elements */
 .logo img {
@@ -10,8 +11,8 @@ body {
 nav {
     display: flex;
     justify-content: space-evenly;
-    background-color: rgb(0, 255, 234);
-    color: white;
+    background-color: rgb(30, 51, 49);
+    color: brown;
 }
 /* nav a:link, a:visited {
     color: white;
@@ -31,7 +32,7 @@ nav a:hover {
     font-weight: bold; */
 /* } */
 .nav-link {
-    flex-basis: 12%;
+    flex-basis: 2%;
     margin: 1em;
     padding: 0.5em;
     text-align: left;
@@ -50,7 +51,7 @@ nav a:hover {
 .content__cell {
     flex-basis: 30%;
     border: 7px solid firebrick;
-    background-color: rgb(24, 219, 219);
+    background-color: rgb(18, 0, 66);
 
     margin: 1em;
     padding: 2em;
@@ -60,10 +61,39 @@ nav a:hover {
     max-width: 140px;
     height: auto;
 
-}
-footer {
-    background-color: rgb(192, 107, 107);
+
+}footer {
+    animation-name: blink ;
+    animation-duration: .5s ;
+    animation-timing-function: step-end ;
+    animation-iteration-count: infinite ;
+    animation-direction: alternate ;
+    background-color: rgb(255, 0, 179);
     color: white;
-    margin: 0.5em;
+    margin: 0.5em 0;
     padding: 0.5em;
+    border: 6px dotted rgb(255,173,0); 
+}
+.copyright {
+ height: 50px;	
+ overflow: hidden;
+ position: relative;
+ background-color: rgb(255, 0, 179);
+ color: white;
+}
+.copyright p {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ text-align: center;
+ /* Starting position */
+ transform:translateX(100%);
+ /* Apply animation to this element */
+ animation: scroll-left 10s linear infinite;
+}
+/* Move it (define the animation) */
+@keyframes scroll-left {
+ 0%   {transform: translateX(100%);}
+ 100% {transform: translateX(-100%); }
 }
